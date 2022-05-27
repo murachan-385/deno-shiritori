@@ -3,11 +3,6 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
-  <script>
-  function change(){
-    alert("きてます");
-  }
-  </script>
 </head>
 
 <body class="center">
@@ -15,7 +10,7 @@
   <p id="previousWord"></p>
   <input id="nextWordInput" type="text" /><br><br>
 
-  <button id="a1" class="btn_choice" onclick="change()"></button>
+  <button id="a1" class="btn_choice"></button>
   <button id="a2" class="btn_choice"></button><br>
   <button id="a3" class="btn_choice"></button>
   <button id="a4" class="btn_choice"></button><br><br>
@@ -40,6 +35,10 @@
       a2.innerText = options[1];
       a3.innerText = options[2];
       a4.innerText = options[3];
+    };
+
+    document.querySelector("#a1").onclick = async (event) => {
+      alert("kitakita");
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
