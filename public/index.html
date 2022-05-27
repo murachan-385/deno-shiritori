@@ -27,10 +27,10 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
-      var a1 = document.getElementById("a1");
-      var a2 = document.getElementById("a2");
-      var a3 = document.getElementById("a3");
-      var a4 = document.getElementById("a4");
+      //var a1 = document.getElementById("a1");
+      //var a2 = document.getElementById("a2");
+      //var a3 = document.getElementById("a3");
+      //var a4 = document.getElementById("a4");
       a1.innerText = options[0];
       a2.innerText = options[1];
       a3.innerText = options[2];
@@ -38,7 +38,16 @@
     };
 
     document.querySelector("#a1").onclick = async (event) => {
-      document.querySelector("#nextWordInput").value = a1.innerText;
+      document.querySelector("#nextWordInput").value = a2.innerText;
+    };
+    document.querySelector("#a2").onclick = async (event) => {
+      document.querySelector("#nextWordInput").value = a2.innerText;
+    };
+    document.querySelector("#a3").onclick = async (event) => {
+      document.querySelector("#nextWordInput").value = a3.innerText;
+    };
+    document.querySelector("#a4").onclick = async (event) => {
+      document.querySelector("#nextWordInput").value = a4.innerText;
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
