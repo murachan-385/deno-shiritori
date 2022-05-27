@@ -3,13 +3,13 @@ body {
 }
 
 .btn_choice{
-    border-radius: 2px;
+    border-radius: 3px;
     text-align: center;
     color: black;
 	height: 50px;
 	width: 150px;
 	background: #c4fdf9;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .center{
@@ -17,11 +17,11 @@ body {
 }
 
 .btn_send{
-    border-radius: 2px;
+    border-radius: 3px;
     text-align: center;
     color: black;
 	height: 50px;
 	width: 150px;
 	background: white;
-    font-size: 20px;
+    font-size: 15px;
 }
