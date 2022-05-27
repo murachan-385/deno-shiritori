@@ -1,12 +1,16 @@
 body {
-    background: skyblue;
+    background: white;
 }
 
 .btn{
     border-radius: 5px;
     text-align: center;
-    color: white;
+    color: black;
 	height: 50px;
-	width: 80px;
-	background: #3858FF;
+	width: 150px;
+	background: #c4fdf9;
+}
+
+.center{
+    text-align: center;
 }
