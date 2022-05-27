@@ -18,7 +18,8 @@
   <button id="a4" class="btn_choice"></button>
   <br><br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
-  <br>
+  <br><br>
+  <font size="6">あなたの点数：</font>
   <font size="6" id="score"></font>
 
 
@@ -103,7 +104,7 @@
 
       var score = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
-      div.innerHTML = score + "点/100点";
+      div.innerHTML = score + "点";
     };
   </script>
 </body>
