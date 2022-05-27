@@ -14,14 +14,15 @@
   <button id="a2" class="btn_choice"></button><br>
   <button id="a3" class="btn_choice"></button>
   <button id="a4" class="btn_choice"></button><br><br>
-  <button id="nextWordSendButton" class="btn_send">送信</button>
+  <button id="nextWordSendButton" class="btn_send">決定</button>
 
 
   <script type="module">
     var options = [
       ['りゆう', 'あんこ', 'たかい', 'てんし'],
-    　['うおざ', 'いんど', 'すいか', 'からす']
+      ['うおざ', 'いんど', 'すいか', 'からす']
     ];
+    var char_50 = ['り','う'];
     window.onload = async (event) => {
       const response = await fetch("/shiritori");
       const previousWord = await response.text();
@@ -30,11 +31,11 @@
       para.innerText = `前の単語：${previousWord}`;
 
       //ランダムな始まりの単語に合わせて選択肢の内容を変えたい
-      var random_i = Math.floor( Math.random() * 4 );
-      a1.innerText = options[0][(random_i)%4];
-      a2.innerText = options[0][(random_i+1)%4];
-      a3.innerText = options[0][(random_i+2)%4];
-      a4.innerText = options[0][(random_i+3)%4];
+      var random_j = Math.floor( Math.random() * 4 );
+      a1.innerText = options[0][(random_j)%4];
+      a2.innerText = options[0][(random_j+1)%4];
+      a3.innerText = options[0][(random_j+2)%4];
+      a4.innerText = options[0][(random_j+3)%4];
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -67,6 +68,16 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
       //選択肢の変更と点数を計測
+      for(let i=0; char_50[i]!='\0'; i++){
+        if(previousWord.charAt(previousWord.length - 1) == char_50[i]){
+          break;
+        }
+      }
+      var random_j = Math.floor( Math.random() * 4 );
+      a1.innerText = options[i][(random_j)%4];
+      a2.innerText = options[i][(random_j+1)%4];
+      a3.innerText = options[i][(random_j+2)%4];
+      a4.innerText = options[i][(random_j+3)%4];
     };
   </script>
 </body>
