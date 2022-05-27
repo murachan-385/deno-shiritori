@@ -31,10 +31,10 @@
 
       //ランダムな始まりの単語に合わせて選択肢の内容を変えたい
       var random_i = Math.floor( Math.random() * 4 );
-      a1.innerText = options[0][(i)%4];
-      a2.innerText = options[0][(i+1)%4];
-      a3.innerText = options[0][(i+2)%4];
-      a4.innerText = options[0][(i+3)%4];
+      a1.innerText = options[0][(random_i)%4];
+      a2.innerText = options[0][(random_i+1)%4];
+      a3.innerText = options[0][(random_i+2)%4];
+      a4.innerText = options[0][(random_i+3)%4];
     };
 
     document.querySelector("#a1").onclick = async (event) => {
