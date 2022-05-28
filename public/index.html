@@ -6,7 +6,7 @@
 </head>
 
 <body class="center" background=colorful.jpg>
-  <h1 >しりとり</h1>
+  <h1 >しりとりタイムアタック</h1>
   <font id="previousWord" size="5"></font>
   <br>
   <input id="nextWordInput" type="text" readonly class="nextword">
@@ -20,10 +20,12 @@
   <button id="a4" class="btn_choice"></button>
   <br><br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
-  <br><br>
-  <font size="6">あなたの点数：</font>
-  <font size="6" id="score">０点</font>
-
+  <br><br><br><br><br><br>
+  <font size="8">あなたのスコア</font>
+  <br>
+  <font size="8">
+    <div id="score"></div>
+  </font>
 
   <script type="module">
     var options = [
@@ -105,10 +107,6 @@
 
       var data = Number(localStorage.getItem('yourscore')) + 1;
       localStorage.setItem('yourscore', data);
-
-      var score = localStorage.getItem('yourscore');
-      var div = document.getElementById('score');
-      div.innerHTML = score + "点";
     };
     
     function CDT() {
@@ -136,17 +134,26 @@
           timer += '' + this.addZero(sec) + '秒';
           this.elem.innerHTML = timer;
           tid = setTimeout(function () {
-            me.countDown();}, 10);
-          } 
-          else {
-            this.elem.innerHTML = this.mes;
-            return;
-          }
-        }, 
-        addZero: function (num) {
-          return ('0' + num).slice(-2);
+            me.countDown();
+          }, 10);
+        } 
+        else {
+          this.elem.innerHTML = this.mes;
+          show_score();
+          return;
         }
+      }, 
+      addZero: function (num) {
+        return ('0' + num).slice(-2);
       }
+    }
+
+    function show_score() {
+      var ans = localStorage.getItem('yourscore');
+      var div = document.getElementById('score');
+      div.innerHTML = ans + "点";
+    }
+
   </script>
 </body>
 </html>
