@@ -21,9 +21,7 @@
   <br><br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
   <br><br><br><br><br><br>
-  <font size="8">あなたのスコア</font>
-  <br>
-  <font size="8">
+  <font size="8" weight="bold">
     <div id="score"></div>
   </font>
 
@@ -151,7 +149,7 @@
     function show_score() {
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
-      div.innerHTML = ans + "点";
+      div.innerHTML = "あなたのスコア" + ans + "点";
     }
 
   </script>
