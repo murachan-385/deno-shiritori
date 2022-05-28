@@ -62,7 +62,6 @@
       localStorage.setItem('yourscore', 0);
         
       CDT();
-      CDT01();
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -118,14 +117,6 @@
       var timer = new CountdownTimer('CDT', tl, '終了しました');
       timer.countDown();
     }
-
-    function CDT01() {
-	var tl = new Date();// ここで日付を指定
-	tl.setMinutes(tl.getMinutes() + 5);
-	var timer = new CountdownTimer('CDT01', tl, '終了しました');
-	timer.countDown();
-}
-
 
     function CountdownTimer(elm, tl, mes) {
       this.initialize.apply(this, arguments);
