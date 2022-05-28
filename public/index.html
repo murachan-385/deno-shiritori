@@ -9,6 +9,9 @@
   <h1>しりとり</h1>
   <p id="previousWord"></p>
   <input id="nextWordInput" type="text" readonly>
+  <section class="timer">
+		<div id="CDT"></div>
+	</section>
   <br><br>
   <button id="a1" class="btn_choice"></button>
   <button id="a2" class="btn_choice"></button>
@@ -39,6 +42,7 @@
       ['りゆう', 'あんこ', 'たかい', 'てんし']
     ];
     var char_50 = ['い','う','え','か','く','さ','す','せ','と','な','ま','ら','り'];
+    
     window.onload = async (event) => {
       const response = await fetch("/shiritori");
       const previousWord = await response.text();
@@ -56,6 +60,11 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
+
+      window.onload = function () {
+        CDT();
+        CDT01();
+      }
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -88,7 +97,6 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
-      //選択肢の変更と点数を計測
       var i;
       for(i=0; previousWord.charAt(previousWord.length - 1) != char_50[i]; i++){
       }
@@ -105,6 +113,58 @@
       var div = document.getElementById('score');
       div.innerHTML = score + "点";
     };
+    
+    function CDT() {
+      var tl = new Date();
+      tl.setMinutes(tl.getMinutes() + 1);
+      var timer = new CountdownTimer('CDT', tl, '終了しました');
+      timer.countDown();
+    }
+
+    function CDT01() {
+	var tl = new Date();// ここで日付を指定
+	tl.setMinutes(tl.getMinutes() + 5);
+	var timer = new CountdownTimer('CDT01', tl, '終了しました');
+	timer.countDown();
+}
+
+
+    function CountdownTimer(elm, tl, mes) {
+      this.initialize.apply(this, arguments);
+    }
+    CountdownTimer.prototype = {
+      initialize: function (elm, tl, mes) {
+        this.elem = document.getElementById(elm);
+        this.tl = tl;
+        this.mes = mes;
+      }, countDown: function () {
+        var timer = '';
+        var today = new Date();
+        var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
+        var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
+        var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+        var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
+        var me = this;
+        if ((this.tl - today) > 0) {
+          if (day)
+          timer += '' + day + '日';
+          if (hour)
+          timer += '' + hour + '時間';
+          timer += '' + this.addZero(min) + '分' +this.addZero(sec) + '秒';
+          this.elem.innerHTML = timer;
+          tid = setTimeout(function () {
+            me.countDown();}, 10);
+          } 
+          else {
+            this.elem.innerHTML = this.mes;
+            //find_call();
+            return;
+          }
+        }, addZero: function (num) {
+          return ('0' + num).slice(-2);
+        }
+      }
   </script>
 </body>
 </html>
