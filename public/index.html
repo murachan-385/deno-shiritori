@@ -7,8 +7,6 @@
 
 <body class="center">
   <h1>しりとり</h1>
-  <font>前の単語→</font>
-  <font size="5">次の単語</font><br>
   <p id="previousWord"></p>
   <input id="nextWordInput" type="text" readonly>
   <br><br>
@@ -88,7 +86,7 @@
 
       const previousWord = await response.text();
       const para = document.querySelector("#previousWord");
-      para.innerText = `${previousWord}`;
+      para.innerText = `前の単語：${previousWord}`;
 
       //選択肢の変更と点数を計測
       var i;
