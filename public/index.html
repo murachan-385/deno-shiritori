@@ -114,7 +114,7 @@
     function CDT() {
       var tl = new Date();
       tl.setMinutes(tl.getMinutes() + 1);
-      var timer = new CountdownTimer('CDT', tl, '終了しました');
+      var timer = new CountdownTimer('CDT', tl, 'ゲーム終了！');
       timer.countDown();
     }
 
@@ -129,17 +129,17 @@
       }, countDown: function () {
         var timer = '';
         var today = new Date();
-        var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
-        var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        //var day = Math.floor((this.tl - today) / (24 * 60 * 60 * 1000));
+        //var hour = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
         var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
         var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
-        var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
+        //var milli = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 10) % 100;
         var me = this;
         if ((this.tl - today) > 0) {
-          if (day)
-          timer += '' + day + '日';
-          if (hour)
-          timer += '' + hour + '時間';
+          //if (day)
+          //timer += '' + day + '日';
+          //if (hour)
+          //timer += '' + hour + '時間';
           timer += '' + this.addZero(min) + '分' +this.addZero(sec) + '秒';
           this.elem.innerHTML = timer;
           tid = setTimeout(function () {
