@@ -30,3 +30,8 @@
     color: black;
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+.nextword{
+    line-height: 10;
+    font-size: 5;
+}
