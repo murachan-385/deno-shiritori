@@ -60,11 +60,9 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
-
-      window.onload = function () {
-        CDT();
-        CDT01();
-      }
+        
+      CDT();
+      CDT01();
     };
 
     document.querySelector("#a1").onclick = async (event) => {
