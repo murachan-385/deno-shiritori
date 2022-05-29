@@ -12,7 +12,7 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </font>
   <br><br>
-  <button class="btn_choice"　id="start" onclick="CDT()">ゲームスタート！</button>
+  <button class="btn_choice"　id="start">ゲームスタート！</button>
   <br><br>
   <font id="border">
     -----------------------------------------------
@@ -182,6 +182,10 @@
       document.getElementById("a4").disabled = true;
       document.getElementById("nextWordSendButton").disabled = true;
     }
+
+    document.querySelector("#start").onclick = async (event) => {
+      CDT();
+    };
   </script>
 </body>
 </html>
