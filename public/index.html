@@ -47,7 +47,7 @@
   <font size="8" weight="bold">
     <div id="score"></div>
   </font>
-  <button onclick="window.location.reload(true);" class="btn_send">
+  <button onclick="window.location.reload(true);" class="btn_send" id="restart">
     はじめから
   </button>
   <br>
@@ -92,6 +92,7 @@
       localStorage.setItem('yourscore', 0);
 
       document.getElementById("nextWordSendButton").disabled = true;
+      document.getElementById("restart").disabled = true;
     };
 
     document.querySelector("#a1").onclick = async (event) => {
