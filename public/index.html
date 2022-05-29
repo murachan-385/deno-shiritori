@@ -12,7 +12,7 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </p>
   <br>
-  <input type="button" value="ゲームスタート！" class="btn_choice" onclick="gameStart()" />
+  <input type="button" value="ゲームスタート！" class="btn_choice" id="start/>
   <p>
     -----------------------------------------------
   </p>
@@ -100,7 +100,7 @@
     document.querySelector("#a4").onclick = async (event) => {
       document.querySelector("#nextWordInput").value = a4.innerText;
     };
-    function gameStart() {
+    document.querySelector("#start").onclick = async (event) => {
       document.getElementById("detail1").style.visibility ="hidden";
     };
 
