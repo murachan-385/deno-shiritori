@@ -163,11 +163,11 @@
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
       div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
-      document.getElementById("a1") = true;
-      document.getElementById("a2") = true;
-      document.getElementById("a3") = true;
-      document.getElementById("a4") = true;
-      document.getElementById("nextWordSendButton") = true;
+      document.getElementById("a1").disabled  = true;
+      document.getElementById("a2").disabled = true;
+      document.getElementById("a3").disabled = true;
+      document.getElementById("a4").disabled = true;
+      document.getElementById("nextWordSendButton").disabled = true;
     }
   </script>
 </body>
