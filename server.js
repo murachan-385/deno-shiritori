@@ -16,7 +16,10 @@ serve(async (req) => {
     const requestJson = await req.json();
     const nextWord = requestJson.nextWord;
 
-    if(nextWord.length == 0 ){
+    if(CDT.innerText == "ゲーム終了！"){
+      return new Response("タイムオーバーです。はじめからをクリックしよう！", { status: 400 });
+    }
+    else if(nextWord.length == 0 ){
       return new Response("次の単語を選択してください。", { status: 400 });
     }
     else if (nextWord.length > 0 &&
@@ -27,7 +30,6 @@ serve(async (req) => {
     previousWord = nextWord;
     return new Response(previousWord);
   }
-
 
   return serveDir(req, {
     fsRoot: "public",
