@@ -12,7 +12,7 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </font>
   <br><br>
-  <button class="btn_choice"　id="start">ゲームスタート！</button>
+  <button class="btn_choice"　id="start" onclick="CDT()">ゲームスタート！</button>
   <br><br>
   <font id="border">
     -----------------------------------------------
@@ -87,8 +87,6 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
-        
-      CDT();
     };
 
     document.querySelector("#a1").onclick = async (event) => {
