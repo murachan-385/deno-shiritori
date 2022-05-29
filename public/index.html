@@ -85,7 +85,7 @@
         
       CDT();
 
-      document.getElementById("detail1").style.visibility ="visible";
+      document.getElementById("detail1").style.display = 'inline';
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -101,7 +101,7 @@
       document.querySelector("#nextWordInput").value = a4.innerText;
     };
     document.querySelector("#start").onclick = async (event) => {
-      document.getElementById("detail1").style.visibility ="hidden";
+      document.getElementById("detail1").style.display = 'none';
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
