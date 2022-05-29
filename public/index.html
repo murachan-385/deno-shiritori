@@ -7,7 +7,11 @@
 
 <body background=colorful.jpg class="center">
   <h1>しりとりタイムアタック</h1>
-  <font　size="4">制限時間１分以内で何回しりとりできるか挑戦しよう！</font>
+  <font　size="4">
+    制限時間１分以内で何回しりとりできるか挑戦しよう！<br>
+    ゲームの説明を読んで、準備ができたら、スタートボタンを押してね。
+  </font>
+  <button id="start" class="btn_choice" onclick="CDT();">ゲームスタート</button>>
   <br><br><br>
   <font id="previousWord" size="5"></font>
   <br>
@@ -31,7 +35,7 @@
   </font>
   <br><br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
-  <br><br><br><br><br><br>
+  <br><br><br>
   <font size="8" weight="bold">
     <div id="score"></div>
   </font>
@@ -72,8 +76,8 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
-        
-      CDT();
+
+      document.getElementById ("start").style.visibility = "visible";
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -121,6 +125,7 @@
     };
     
     function CDT() {
+      document.getElementById("start").style.visibility = "hidden";
       var tl = new Date();
       tl.setMinutes(tl.getMinutes() + 1);
       var timer = new CountdownTimer('CDT', tl, 'ゲーム終了！');
@@ -163,6 +168,11 @@
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
       div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
+      document.getElementById("a1") = true;
+      document.getElementById("a2") = true;
+      document.getElementById("a3") = true;
+      document.getElementById("a4") = true;
+      document.getElementById("nextWordSendButton") = true;
     }
   </script>
 </body>
