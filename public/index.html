@@ -94,6 +94,7 @@
       localStorage.setItem('yourscore', 0);
 
       CDT();
+      start();
 
       document.getElementById("nextWordSendButton").disabled = true;
       document.getElementById("restart").disabled = true;
@@ -148,7 +149,9 @@
       tl.setMinutes(tl.getMinutes() + 1);
       var timer = new CountdownTimer('CDT', tl, 'ゲーム終了！');
       timer.countDown();
+    };
 
+    function start(){
       document.getElementById("nextWordSendButton").disabled = false;
       document.getElementById("restart").disabled = false;
       document.getElementById ("border_1").style.visibility = "hidden";
