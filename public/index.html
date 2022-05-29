@@ -12,7 +12,7 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </font>
   <br><br>
-  <button class="btn_choice"　id="CD_start">ゲームスタート！</button>
+  <button class="btn_choice"　id="CD_start" onclick="CDT();">ゲームスタート！</button>
   <br><br>
   <font id="border">
     -----------------------------------------------
@@ -138,11 +138,12 @@
       tl.setMinutes(tl.getMinutes() + 1);
       var timer = new CountdownTimer('CDT', tl, 'ゲーム終了！');
       timer.countDown();
-    }
+    };
 
     function CountdownTimer(elm, tl, mes) {
       this.initialize.apply(this, arguments);
-    }
+    };
+
     CountdownTimer.prototype = {
       initialize: function (elm, tl, mes) {
         this.elem = document.getElementById(elm);
@@ -170,7 +171,7 @@
       addZero: function (num) {
         return ('0' + num).slice(-2);
       }
-    }
+    };
 
     function show_score() {
       var ans = localStorage.getItem('yourscore');
@@ -181,11 +182,8 @@
       document.getElementById("a3").disabled = true;
       document.getElementById("a4").disabled = true;
       document.getElementById("nextWordSendButton").disabled = true;
-    }
-
-    document.querySelector("#CD_start").onclick = async (event) => {
-      CDT();
     };
+
   </script>
 </body>
 </html>
