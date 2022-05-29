@@ -14,7 +14,7 @@
   <br><br>
   <button id="start" class="btn_choice" onclick="CDT()">ゲームスタート!</button>
   <br><br>
-  ---------------------------
+  ---------------------------------------------------
   <br><br>
   <font id="previousWord" size="5"></font>
   <br>
@@ -39,7 +39,7 @@
   <br><br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
   <br><br>
-  ---------------------------
+  ---------------------------------------------------
   <br><br>
   <font size="8" weight="bold">
     <div id="score"></div>
@@ -83,7 +83,7 @@
       localStorage.setItem('yourscore', 0);
 
       document.getElementById ("start").style.visibility = "visible";
-      document.getElementById("nextWordSendButton") = true;
+      document.getElementById("nextWordSendButton") = false;
       document.getElementById ("detail_1").style.visibility = "visible";
       document.getElementById ("detail_2").style.visibility = "visible";
     };
@@ -134,7 +134,7 @@
     
     function CDT() {
       document.getElementById("start").style.visibility = "hidden";
-      document.getElementById("nextWordSendButton") = false;
+      document.getElementById("nextWordSendButton") = true;
       document.getElementById ("detail_1").style.visibility = "hidden";
       document.getElementById ("detail_2").style.visibility = "hidden";
 
