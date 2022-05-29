@@ -12,7 +12,7 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </font>
   <br><br>
-  <button class="btn_choice"　id="CD_start">ゲームスタート！</button>
+  <button class="btn_choice"　id="CD_start" onclick="start();">ゲームスタート！</button>
   <br><br>
   <font id="border">
     -----------------------------------------------
@@ -89,9 +89,10 @@
       localStorage.setItem('yourscore', 0);
     };
 
-    document.querySelector("#CD_start").onclick = async (event) => {
+    function start(){
       CDT();
-    };
+      document.getElementById ("detail").style.visibility = "hidden";
+    }
 
     document.querySelector("#a1").onclick = async (event) => {
       document.querySelector("#nextWordInput").value = a1.innerText;
