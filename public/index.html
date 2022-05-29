@@ -7,12 +7,12 @@
 
 <body background=colorful.jpg class="center">
   <h1>しりとりタイムアタック</h1>
-  <p size="4">
+  <p id="detail_1">
     制限時間１分以内で何回しりとりできるか挑戦しよう！<br>
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </p>
   <br>
-  <!-- <button>ゲームスタート！</button> -->
+  <button class="btn_choice" onclick="gameStart()">ゲームスタート！</button>
   <p>
     -----------------------------------------------
   </p>
@@ -84,6 +84,8 @@
       localStorage.setItem('yourscore', 0);
         
       CDT();
+
+      document.getElementById("detail_1").style.visibility ="visible";
     };
 
     document.querySelector("#a1").onclick = async (event) => {
@@ -178,6 +180,10 @@
       document.getElementById("a3").disabled = true;
       document.getElementById("a4").disabled = true;
       document.getElementById("nextWordSendButton").disabled = true;
+    }
+    
+    function gameStart() {
+      document.getElementById("detail_1").style.visibility ="hidden";
     }
   </script>
 </body>
