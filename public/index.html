@@ -100,6 +100,9 @@
     document.querySelector("#a4").onclick = async (event) => {
       document.querySelector("#nextWordInput").value = a4.innerText;
     };
+    function gameStart() {
+      document.getElementById("detail_1").style.visibility ="hidden";
+    }
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
       const nextWord = document.querySelector("#nextWordInput").value;
@@ -180,10 +183,6 @@
       document.getElementById("a3").disabled = true;
       document.getElementById("a4").disabled = true;
       document.getElementById("nextWordSendButton").disabled = true;
-    }
-    
-    function gameStart() {
-      document.getElementById("detail_1").style.visibility ="hidden";
     }
   </script>
 </body>
