@@ -35,6 +35,7 @@
   <p id="detail3">
     ↑<br>選択肢です。前の単語にしりとりとして続く単語を選択しましょう。
   </p>
+  <br>
   <button id="nextWordSendButton" class="btn_send">決定</button>
   <br>
   <p>
@@ -43,7 +44,7 @@
   <font size="8" weight="bold">
     <div id="score"></div>
   </font>
-  <button onclick="window.location.reload(true);" class="btn_send">
+  <button onclick="window.location.reload(true);" class="btn_send" id="restart">
     はじめから
   </button>
 
@@ -83,7 +84,8 @@
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
 
-      document.getElementById("detail1").style.display = 'inline';
+      document.getElementById("nextWordSendButton").disabled = true;
+      document.getElementById("restart").disabled = true;
     };
 
     document.querySelector("#a1").onclick = async (event) => {
