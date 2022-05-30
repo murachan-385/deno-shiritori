@@ -108,9 +108,9 @@
       document.getElementById("start").style.display = 'none'
       document.getElementById("nextWordSendButton").disabled = false;
       document.getElementById("restart").disabled = false;
-      CDT();
       const para = document.querySelector("#previousWord");
       para.innerText = "前の単語：" + prewords[Math.floor( Math.random() * 13 )];
+      CDT();
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
