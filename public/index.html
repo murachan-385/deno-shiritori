@@ -105,7 +105,7 @@
       document.getElementById("restart").disabled = false;
       CDT();
 
-      const para = document.querySelector("#previousWord");
+      var para = document.querySelector("#previousWord");
       para.innerText = "前の単語：" + prewords[Math.floor( Math.random() * 13 )];
       var i;
       for(i=0; para.innerText.charAt(para.innerText.length - 1) != char_50[i]; i++){
