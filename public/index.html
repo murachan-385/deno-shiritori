@@ -73,16 +73,11 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
-      para.innerText = "前の単語：" + prewords[Math.floor( Math.random() * 13 )];
-
-      var i;
-      for(i=0; para.innerText.charAt(para.innerText.length - 1) != char_50[i]; i++){
-      }
       var random_j = Math.floor( Math.random() * 4 );
-      a1.innerText = options[i][(random_j)%4];
-      a2.innerText = options[i][(random_j+1)%4];
-      a3.innerText = options[i][(random_j+2)%4];
-      a4.innerText = options[i][(random_j+3)%4];
+      a1.innerText = options[12][(random_j)%4];
+      a2.innerText = options[12][(random_j+1)%4];
+      a3.innerText = options[12][(random_j+2)%4];
+      a4.innerText = options[12][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
 
       document.getElementById("nextWordSendButton").disabled = true;
@@ -109,6 +104,17 @@
       document.getElementById("nextWordSendButton").disabled = false;
       document.getElementById("restart").disabled = false;
       CDT();
+
+      const para = document.querySelector("#previousWord");
+      para.innerText = "前の単語：" + prewords[Math.floor( Math.random() * 13 )];
+      var i;
+      for(i=0; para.innerText.charAt(para.innerText.length - 1) != char_50[i]; i++){
+      }
+      var random_j = Math.floor( Math.random() * 4 );
+      a1.innerText = options[i][(random_j)%4];
+      a2.innerText = options[i][(random_j+1)%4];
+      a3.innerText = options[i][(random_j+2)%4];
+      a4.innerText = options[i][(random_j+3)%4];
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
