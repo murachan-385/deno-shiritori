@@ -64,7 +64,8 @@
       ['りゆう', 'あんこ', 'たかい', 'てんし']
     ];
     var char_50 = ['い','う','え','か','く','さ','す','せ','と','な','ま','ら','り'];
-    
+    var prewords = ['いんく','うわさ','えんか','からす','くさり','さんま','すまい','せいと','とだな','なまえ','まくら','らいと','りゆう'];
+
     window.onload = async (event) => {
       const response = await fetch("/shiritori");
       const previousWord = await response.text();
@@ -72,7 +73,7 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
-      para.innerText = options[Math.floor( Math.random() * 13 )];
+      para.innerText = prewords[Math.floor( Math.random() * 13 )];
 
       var i;
       for(i=0; previousWord.charAt(previousWord.length - 1) != char_50[i]; i++){
