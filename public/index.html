@@ -82,8 +82,6 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
-        
-      CDT();
 
       document.getElementById("detail1").style.display = 'inline';
     };
@@ -102,6 +100,7 @@
     };
     document.querySelector("#start").onclick = async (event) => {
       document.getElementById("detail1").style.display = 'none';
+      CDT();
     };
 
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
