@@ -2,8 +2,7 @@ import { serve } from "https://deno.land/std@0.138.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 //始まりの単語をランダムにしたい
-var options = ['いんく','うわさ','えんか','からす','くさり','さんま','すまい','せいと','とだな','なまえ','まくら','らいと','りゆう'];
-let previousWord = options[Math.floor( Math.random() * 13 )];
+let previousWord = "しりとり";
 console.log("Listening on http://localhost:8000");
 
 serve(async (req) => {
