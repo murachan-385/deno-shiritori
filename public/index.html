@@ -135,6 +135,12 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       document.querySelector("#nextWordInput").value = "";
+      
+      $(function() {
+        $('.fuwafuwa').css({
+          backgroundImage: 'url("./image/ukiwa.png")'
+        });
+      });
 
       var data = Number(localStorage.getItem('yourscore')) + 1;
       localStorage.setItem('yourscore', data);
