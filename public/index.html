@@ -139,8 +139,7 @@
       var data = Number(localStorage.getItem('yourscore')) + 1;
       localStorage.setItem('yourscore', data);
 
-      var fuwafuwaimage = document.getElementById('fuwafuwa').style.backgroundimage;
-      fuwafuwaimage = 'url("./image/ukiwa.png")';
+      document.getElementById('fuwafuwa').style.backgroundimage = 'url("./image/ukiwa.png")';
     };
     
     function CDT() {
