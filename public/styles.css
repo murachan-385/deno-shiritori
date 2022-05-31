@@ -38,7 +38,7 @@
     text-align: center;
 }
 
-#fuwafuwa {
+.fuwafuwa {
     animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
     background: url(./image/ryu.png) no-repeat center center / 60px auto;
     display: inline-block;
