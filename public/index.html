@@ -12,9 +12,10 @@
     ゲームの説明文を読んで、準備ができたら、ゲームスタートボタンを押してね。
   </p>
 
-  <button class="btn_send" onclick="set60s()">60秒間</button>
+  <button class="btn_send" id="set60s">60秒間</button>
   <br>
-  <button class="btn_send" onclick="set30s()">30秒間</button>
+  <button class="btn_send" id="set30s">30秒間</button>
+  <br>
 
   <input type="button" value="ゲームスタート！" class="btn_choice" id="start" />
   <p>
@@ -237,12 +238,13 @@
       document.getElementById("nextWordSendButton").disabled = true;
     }
     
-    function set60s(){
+    document.querySelector("#set60s").onclick = async (event) => {
       CDT.innerText = "60秒";
-    }
-    function set30s(){
+    };
+
+    document.querySelector("#set30s").onclick = async (event) => {
       CDT.innerText = "30秒";
-    }
+    };
   </script>
 </body>
 </html>
