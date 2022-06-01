@@ -61,7 +61,7 @@
       ['なめこ', 'らいと', 'にんき', 'さんま'],
       ['まくら', 'ちてい', 'とだな', 'しらが'],
       ['らいと', 'なると', 'にんき', 'さんま'],
-      ['りゅう', 'あんこ', 'たかい', 'てんし'],
+      ['りゅう', 'りん', 'たかい', 'てんし'],
       ['しま', 'いなか', 'からす', 'うわさ']
     ];
     var char_50 = ['い','う','こ','か','く','わ','す','と','な','ま','ら','り', 'し'];
@@ -126,6 +126,10 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
+      if(nextWord.charAt(nextWord.length -1) == 'ん'){
+        show_score();
+      }
+
       var i;
       for(i=0; previousWord.charAt(previousWord.length - 1) != char_50[i]; i++){
       }
@@ -134,7 +138,7 @@
       a2.innerText = options[i][(random_j+1)%4];
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
-      document.querySelector("#nextWordInput").value = "";
+      nextWord = "";
 
       var data = Number(localStorage.getItem('yourscore')) + 1;
       localStorage.setItem('yourscore', data);
