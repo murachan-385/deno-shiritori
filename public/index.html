@@ -82,6 +82,9 @@
       a3.innerText = options[i][(random_j+2)%4];
       a4.innerText = options[i][(random_j+3)%4];
       localStorage.setItem('yourscore', 0);
+      if (localStorage.getItem('highscore') == null){
+        localStorage.setItem('highscore', 0);
+      }
 
       document.getElementById("nextWordSendButton").disabled = true;
       document.getElementById("restart").disabled = true;
@@ -197,7 +200,12 @@
     function show_score() {
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
-      div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
+      if(localStorage.getItem('highscore') > ans) {
+        div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
+      }
+      else{
+        div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>New Record!<br>" + ans + "点";
+      }
       document.getElementById("a1").disabled  = true;
       document.getElementById("a2").disabled = true;
       document.getElementById("a3").disabled = true;
