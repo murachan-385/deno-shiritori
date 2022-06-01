@@ -182,8 +182,8 @@
     
     function CDT() {
       var tl = new Date();
-      if(CDT.innerText == "60秒")　tl.setMinutes(tl.getMinutes() + 1);
-      if(CDT.innerText == "30秒")　tl.setMinutes(tl.getSeconds() + 30);
+      if(document.getElementById('CDT').innerHTML == "60秒")　tl.setMinutes(tl.getMinutes() + 1);
+      if(document.getElementById('CDT').innerHTML == "30秒")　tl.setSeconds(tl.getSeconds() + 30);
       var timer = new CountdownTimer('CDT', tl, 'ゲーム終了！');
       timer.countDown();
     }
