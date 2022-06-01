@@ -109,6 +109,17 @@
       CDT();
     };
 
+    function show_score() {
+      var ans = localStorage.getItem('yourscore');
+      var div = document.getElementById('score');
+      div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
+      document.getElementById("a1").disabled  = true;
+      document.getElementById("a2").disabled = true;
+      document.getElementById("a3").disabled = true;
+      document.getElementById("a4").disabled = true;
+      document.getElementById("nextWordSendButton").disabled = true;
+    }
+
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
       const nextWord = document.querySelector("#nextWordInput").value;
       const response = await fetch("/shiritori", {
@@ -196,17 +207,6 @@
       addZero: function (num) {
         return ('0' + num).slice(-2);
       }
-    }
-
-    function show_score() {
-      var ans = localStorage.getItem('yourscore');
-      var div = document.getElementById('score');
-      div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
-      document.getElementById("a1").disabled  = true;
-      document.getElementById("a2").disabled = true;
-      document.getElementById("a3").disabled = true;
-      document.getElementById("a4").disabled = true;
-      document.getElementById("nextWordSendButton").disabled = true;
     }
   </script>
 </body>
