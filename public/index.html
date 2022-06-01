@@ -200,7 +200,7 @@
     function show_score() {
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
-      if(localStorage.getItem('highscore') < ans) {
+      if(Number(localStorage.getItem('highscore')) < ans) {
         localStorage.setItem('highscore', ans);
         div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>New Record!<br>" + ans + "点";
       }
