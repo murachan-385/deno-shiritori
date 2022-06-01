@@ -200,12 +200,14 @@
     function show_score() {
       var ans = localStorage.getItem('yourscore');
       var div = document.getElementById('score');
-      if(localStorage.getItem('highscore') > ans) {
-        div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
-      }
-      else{
+      if(localStorage.getItem('highscore') < ans) {
+        localStorage.setItem('highscore', ans);
         div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>New Record!<br>" + ans + "点";
       }
+      else{
+        div.innerHTML = "あなたのスコア<br>↓<br>↓<br>↓<br>↓<br>↓<br>"+ ans + "点";
+      }
+      
       document.getElementById("a1").disabled  = true;
       document.getElementById("a2").disabled = true;
       document.getElementById("a3").disabled = true;
