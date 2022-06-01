@@ -126,6 +126,10 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
+      if(nextWord.charAt(nextWord.length - 1) == 'ん'){
+
+      }
+      else{
       var i;
       for(i=0; previousWord.charAt(previousWord.length - 1) != char_50[i]; i++){
       }
@@ -153,6 +157,7 @@
       if(i == 10) Fuwafuwa.style.backgroundImage = 'url("./image/makura.png")';
       if(i == 11) Fuwafuwa.style.backgroundImage = 'url("./image/kusari.png")';   
       if(i == 12) Fuwafuwa.style.backgroundImage = 'url("./image/watagasi.png")';   
+      }
     };
     
     function CDT() {
