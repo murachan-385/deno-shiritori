@@ -50,21 +50,29 @@
 
   <script type="module">
     var options = [
-    　['いんく', 'いんかん', 'せいと', 'からす'],
+      ['あくやく', 'いんかん', 'こじか', 'くさり'],
+    　['いけ', 'いんかん', 'せいと', 'からす'],
       ['うきわ', 'いなか', 'うどん', 'からす'],
-      ['こじか', 'ごはん', 'きょく', 'くさり'],
       ['からす', 'いなか', 'せいと', 'かびん'],
-      ['くさり', 'はーと', 'きょく', 'えんか'],
-      ['わたがし', 'なると', 'にんき', 'らいと'],
+      ['きいろ', 'えんか', 'けいさつ', 'かびん'],
+      ['くさ', 'はーと', 'きょく', 'えんか'],
+      ['けいさつ', 'うきわ', 'はーと', 'かびん'],
+      ['こじか', 'ごはん', 'きょく', 'くさり'],
+      ['さいふ', 'れいわ', 'けいと', 'むし'],
+      ['しま', 'いなか', 'しんぶん', 'うわさ'],
       ['すまい', 'まくら', 'のーと', 'りえき'],
+      ['つき', 'きょく', 'のーと', 'りえき'],
       ['とだな', 'とざん', 'まくら', 'しらが'],
       ['なめこ', 'らいと', 'にんき', 'さんま'],
+      ['ふきや', 'いんく', 'せいと', 'さんま'],
       ['まくら', 'ちてい', 'とだな', 'しらが'],
+      ['やり', 'ちてい', 'とだな', 'しらが'],
       ['らいと', 'なると', 'にんき', 'さんま'],
       ['りゅう', 'あんこ', 'たかい', 'てんし'],
-      ['しま', 'いなか', 'しんぶん', 'うわさ']
+      ['ろしあ', 'あんこ', 'たかい', 'てんし'],
+      ['わたがし', 'なると', 'にんき', 'らいと']
     ];
-    var char_50 = ['い','う','こ','か','く','わ','す','と','な','ま','ら','り', 'し'];
+    var char_50 = ['あ','い','う','か','き','く','け','こ','さ','し','す','つ','と','な','ふ','ま','や','ら','り','ろ','わ'];
 
     window.onload = async (event) => {
       const response = await fetch("/shiritori");
@@ -143,19 +151,27 @@
       localStorage.setItem('yourscore', data);
 
       var Fuwafuwa =  document.getElementById('fuwafuwa');
-      if(i == 0) Fuwafuwa.style.backgroundImage = 'url("./image/house.png")';   
-      if(i == 1) Fuwafuwa.style.backgroundImage = 'url("./image/ryu.png")';   
-      if(i == 2) Fuwafuwa.style.backgroundImage = 'url("./image/nameko.png")';   
-      if(i == 3) Fuwafuwa.style.backgroundImage = 'url("./image/koshika.png")';   
-      if(i == 4) Fuwafuwa.style.backgroundImage = 'url("./image/ink.png")';   
-      if(i == 5) Fuwafuwa.style.backgroundImage = 'url("./image/ukiwa.png")';   
-      if(i == 6) Fuwafuwa.style.backgroundImage = 'url("./image/karasu.png")';   
-      if(i == 7) Fuwafuwa.style.backgroundImage = 'url("./image/right.png")';   
-      if(i == 8) Fuwafuwa.style.backgroundImage = 'url("./image/tana.png")';   
+      if(i == 0) Fuwafuwa.style.backgroundImage = 'url("./image/akuyaku.png")';   
+      if(i == 1) Fuwafuwa.style.backgroundImage = 'url("./image/ike.png")';   
+      if(i == 2) Fuwafuwa.style.backgroundImage = 'url("./image/ukiwa.png")';   
+      if(i == 3) Fuwafuwa.style.backgroundImage = 'url("./image/karasu.png")';   
+      if(i == 4) Fuwafuwa.style.backgroundImage = 'url("./image/yellow.png")';   
+      if(i == 5) Fuwafuwa.style.backgroundImage = 'url("./image/kusa.png")';   
+      if(i == 6) Fuwafuwa.style.backgroundImage = 'url("./image/police.png")';   
+      if(i == 7) Fuwafuwa.style.backgroundImage = 'url("./image/koshika.png")';   
+      if(i == 8) Fuwafuwa.style.backgroundImage = 'url("./image/saifu.png")';   
       if(i == 9) Fuwafuwa.style.backgroundImage = 'url("./image/shima.png")';   
-      if(i == 10) Fuwafuwa.style.backgroundImage = 'url("./image/makura.png")';
-      if(i == 11) Fuwafuwa.style.backgroundImage = 'url("./image/kusari.png")';   
-      if(i == 12) Fuwafuwa.style.backgroundImage = 'url("./image/watagasi.png")';   
+      if(i == 10) Fuwafuwa.style.backgroundImage = 'url("./image/house.png")';
+      if(i == 11) Fuwafuwa.style.backgroundImage = 'url("./image/moon.png")';   
+      if(i == 12) Fuwafuwa.style.backgroundImage = 'url("./image/tana.png")';
+      if(i == 13) Fuwafuwa.style.backgroundImage = 'url("./image/nameko.png")';
+      if(i == 14) Fuwafuwa.style.backgroundImage = 'url("./image/fukiya.png")';
+      if(i == 15) Fuwafuwa.style.backgroundImage = 'url("./image/makura.png")';
+      if(i == 16) Fuwafuwa.style.backgroundImage = 'url("./image/yari.png")';
+      if(i == 17) Fuwafuwa.style.backgroundImage = 'url("./image/right.png")';
+      if(i == 18) Fuwafuwa.style.backgroundImage = 'url("./image/ryu.png")';
+      if(i == 19) Fuwafuwa.style.backgroundImage = 'url("./image/Russia.png")';
+      if(i == 20) Fuwafuwa.style.backgroundImage = 'url("./image/watagasi.png")';
     };
     
     function CDT() {
