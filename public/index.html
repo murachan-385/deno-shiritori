@@ -61,7 +61,7 @@
       ['なめこ', 'らいと', 'にんき', 'さんま'],
       ['まくら', 'ちてい', 'とだな', 'しらが'],
       ['らいと', 'なると', 'にんき', 'さんま'],
-      ['りゅう', 'りん', 'たかい', 'てんし'],
+      ['りゅう', 'あんこ', 'たかい', 'てんし'],
       ['しま', 'いなか', 'からす', 'うわさ']
     ];
     var char_50 = ['い','う','こ','か','く','わ','す','と','な','ま','ら','り', 'し'];
@@ -126,13 +126,6 @@
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
 
-      var Fuwafuwa =  document.getElementById('fuwafuwa');
-
-      if(nextWord.charAt(nextWord.length - 1) == 'ん'){
-        document.querySelector("#nextWordInput").value = "";
-        Fuwafuwa.style.backgroundImage = 'none';
-      }
-      else{
       var i;
       for(i=0; previousWord.charAt(previousWord.length - 1) != char_50[i]; i++){
       }
@@ -146,6 +139,7 @@
       var data = Number(localStorage.getItem('yourscore')) + 1;
       localStorage.setItem('yourscore', data);
 
+      var Fuwafuwa =  document.getElementById('fuwafuwa');
       if(i == 0) Fuwafuwa.style.backgroundImage = 'url("./image/house.png")';   
       if(i == 1) Fuwafuwa.style.backgroundImage = 'url("./image/ryu.png")';   
       if(i == 2) Fuwafuwa.style.backgroundImage = 'url("./image/nameko.png")';   
@@ -159,7 +153,6 @@
       if(i == 10) Fuwafuwa.style.backgroundImage = 'url("./image/makura.png")';
       if(i == 11) Fuwafuwa.style.backgroundImage = 'url("./image/kusari.png")';   
       if(i == 12) Fuwafuwa.style.backgroundImage = 'url("./image/watagasi.png")';   
-      }
     };
     
     function CDT() {
